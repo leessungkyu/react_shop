@@ -16,8 +16,15 @@ let data = [
     title:'상품3',
     content:'상품3설명',
     price: 30000
+  },
+  {
+    id:3,
+    title:'상품4',
+    content:'상품4설명',
+    price: 40000
   }
 ]
+  
 let num1 = 1;
 let num2 = 2;
 let num3 = 3;
