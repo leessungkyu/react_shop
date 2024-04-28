@@ -21,6 +21,7 @@ import { num1, num2, num3 } from "./data";
 //mainBG이라는 이름이로 main.jpg사용
 import mainBG from "./main.jpg";
 import DetailPage from "../src/pages/Detail";
+import Cart from "./pages/Cart";
 import { Routes, Route, useNavigate, Outlet, Link } from "react-router-dom";
 //라우터는 창을 새로 불러오는게 아니라 재렌더링 방식을 사용(빠름)
 
@@ -43,37 +44,32 @@ function App() {
               onClick={() => {
                 navigate("/");
               }}
-            >
-              홈
-            </Nav.Link>
+            >홈</Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/detail");
+                navigate("/detail/0");
               }}
-            >
-              상세페이지
-            </Nav.Link>
+            >상세페이지 </Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("/about");
               }}
-            >
-              About
-            </Nav.Link>
+            >About</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/ cart");
+              }}
+            >장바구니</Nav.Link>            
             <Nav.Link
               onClick={() => {
                 navigate(-1);
               }}
-            >
-              뒤로가기
-            </Nav.Link>
+            >뒤로가기</Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate(1);
               }}
-            >
-              앞으로가기
-            </Nav.Link>
+            >앞으로가기</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -122,6 +118,7 @@ function App() {
           path="/about/member"
           element={<div>어바웃 멤버페이지</div>}
         ></Route>
+        <Route path="/cart" element={<Cart/>}></Route>
         <Route path="*" element={<div>그외페이지(404)</div>}></Route>
       </Routes>
       <br/>
@@ -129,7 +126,7 @@ function App() {
           리액트는 하나의 html을 다시 그리는 방식이기 때문에
           html을 이동하는 <a>태그 보다는 리액트 라우터의 <Link>를 사용 
       */}
-      <Link to="/about/address"><Button variant="warning">리액트 부트스트랩 버튼</Button>{" "}</Link>
+      {/* <Link to="/about/address"><Button variant="warning">리액트 부트스트랩 버튼</Button>{" "}</Link> */}
       {/* 
                     {items.map((item, index) => (
                       <ItemCol key={index} data={item} img={photo[index]} />
